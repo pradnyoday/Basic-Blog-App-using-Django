@@ -8,6 +8,7 @@ from django.test import TestCase
 class BlogUrlsTest(TestCase):
     def test_post_list_url_resolved(self):
         url = reverse('home-blog')
+        print('url ---- ',url)
         self.assertEquals(resolve(url).func.view_class, PostListView)
     
     def test_post_detail_url_resolved(self):
@@ -16,6 +17,7 @@ class BlogUrlsTest(TestCase):
     
     def test_post_create_url_resolved(self):
         url = reverse('post-create')
+        print('url ---- ',url)
         self.assertEquals(resolve(url).func.view_class, PostCreateView)
     
     def test_post_update_url_resolved(self):
